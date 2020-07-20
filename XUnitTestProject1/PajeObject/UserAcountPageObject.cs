@@ -1,24 +1,17 @@
 ﻿using OpenQA.Selenium;
-
+using XUnitTestProject1.Core.SeleniumMethods;
 
 namespace NewUnitProject.PajeObject
 {
     class UserAccountPageObject
     {
-        private IWebDriver _webDriver;
         private readonly By _profileName = By.CssSelector("div.profile-header__name");
 
-        public UserAccountPageObject(IWebDriver webDriver)
+        private GetText textName = new GetText();
+
+        public string userIdSherch()
         {
-            _webDriver = webDriver;
+            return textName.getText(_profileName);          
         }
-
-        public string SerchUserId()
-        {   
-            string userLogin = _webDriver.FindElement(_profileName).Text;
-            return userLogin;
-        }
-
- 
     }
 }

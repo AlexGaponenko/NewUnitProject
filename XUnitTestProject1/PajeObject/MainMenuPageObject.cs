@@ -1,46 +1,31 @@
 ﻿using OpenQA.Selenium;
 using System.Threading;
+using XUnitTestProject1.Core.SeleniumMethods;
 
 namespace NewUnitProject.PajeObject
 {
-    class MainMenuPageObject 
+    public class MainMenuPageObject 
     {
-        private IWebDriver driver;
+       private readonly By _signInButton = By.CssSelector("div[class^=auth-bar] div[class$=text]");
+       private readonly By _profileButton = By.CssSelector("div[class^=b-top-profile__item] a[class^=b-top-profile__preview]");
+       private readonly By _userButton = By.CssSelector("div.b-top-profile__name a[class^=b-top-profile__link]");
 
-        private readonly By _signInButton = By.CssSelector("div[class^=auth-bar] div[class$=text]");
-        private readonly By _profileButton = By.CssSelector("div[class^=b-top-profile__item] a[class^=b-top-profile__preview]");
-        private readonly By _userButton = By.CssSelector("div.b-top-profile__name a[class^=b-top-profile__link]");
-        private readonly By _profileName = By.CssSelector("div.profile-header__name");
+       private Button button = new Button();
 
-        public MainMenuPageObject(IWebDriver webDriver) 
+        public void openLoginMenu()
         {
-            driver = webDriver;
+            button.click(_signInButton);
         }
 
-        public AuthorizationPajeObject SignIn()
+        public void clicProfileButton()
         {
-            driver.FindElement(_signInButton).Click();
-            return new AuthorizationPajeObject(driver);
+            button.click(_profileButton);
         }
 
-        public MainMenuPageObject PressProfileButton()
+        public void clicUserButton()
         {
-            Thread.Sleep(800);
-            driver.FindElement(_profileButton).Click();
-            return new MainMenuPageObject(driver);
+            button.click(_userButton);
         }
 
-        public UserAccountPageObject PressUserButton()
-        {
-            Thread.Sleep(300);
-            driver.FindElement(_userButton).Click();
-            return new UserAccountPageObject (driver);
-        }
-
-      public string SerchUserId()
-      {
-          string userLogin = driver.FindElement(_profileName).Text;
-          return userLogin;
-      }
     }
 }
