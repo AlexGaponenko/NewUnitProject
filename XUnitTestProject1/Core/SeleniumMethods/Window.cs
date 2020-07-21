@@ -10,6 +10,7 @@ namespace XUnitTestProject1.Core.SeleniumMethods
         {
 
             driver.Navigate().GoToUrl(url);
+            driver.Manage().Window.Maximize();
         }
 
         public void WindowMaximize()

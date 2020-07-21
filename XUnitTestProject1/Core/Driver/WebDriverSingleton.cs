@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +19,7 @@ namespace XUnitTestProject1.Core.Driver
         {
             if (driver == null) 
             {
-                driver = new ChromeDriver(ChromeStart.OptionsChrome()); 
+                driver = new FirefoxDriver(ChromeStart.OptionsChrome()); 
             }
 
             return driver;

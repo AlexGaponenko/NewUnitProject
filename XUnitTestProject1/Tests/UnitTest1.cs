@@ -12,20 +12,18 @@ namespace XUnitTestProject1
 {
     public class UnitTest1 : IDisposable
     {
-        
 
+       
         private readonly string url = "https://www.onliner.by/";
 
         Window window;
         public MainMenuPageObject MainMenu;
 
+
         public UnitTest1()
         {
-
-            window = new Window();
-            
-            window.GoTo(url);
-            
+            window = new Window();          
+            window.GoTo(url);            
         }
         public void Dispose()
         {
@@ -55,7 +53,8 @@ namespace XUnitTestProject1
        [Fact]
          public void Test1()
          {
-           MainMenu.openLoginMenu();
+
+            MainMenu.openLoginMenu();
            AuthPage.TypeText(_loginRight,_passwordRight);
            MainMenu.clicProfileButton();
            Assert.True(MainMenu.waitMenu());
@@ -73,7 +72,13 @@ namespace XUnitTestProject1
             Assert.Equal(_messegeWrongLoginOrPassword, AuthPage.messageIdentefication());
         }
 
+        [Fact]
+        public void Test3()
+        {
+            MainMenu.openLoginMenu();
         }
+
+     }
 
  
  }
