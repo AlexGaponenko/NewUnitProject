@@ -16,19 +16,22 @@ namespace XUnitTestProject1
 
         private readonly string url = "https://www.onliner.by/";
 
-        Window window = new Window();
+        Window window;
         public MainMenuPageObject MainMenu;
- //       public AuthorizationPajeObject AuthPage;
 
         public UnitTest1()
-        {   
+        {
+
+            window = new Window();
             
             window.GoTo(url);
             
         }
         public void Dispose()
         {
-            window.CloseBrowser();
+            
+           window.ClearCookies();
+           window.CloseBrowser();
         }
 
     }
@@ -47,6 +50,7 @@ namespace XUnitTestProject1
         MainMenuPageObject MainMenu = new MainMenuPageObject();
         AuthorizationPajeObject AuthPage = new AuthorizationPajeObject();
         UserAccountPageObject UserAcc = new UserAccountPageObject();
+
           
        [Fact]
          public void Test1()

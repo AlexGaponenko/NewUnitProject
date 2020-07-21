@@ -8,6 +8,7 @@ namespace XUnitTestProject1.Core.SeleniumMethods
     {
         public void GoTo(string url)
         {
+
             driver.Navigate().GoToUrl(url);
         }
 
@@ -18,8 +19,13 @@ namespace XUnitTestProject1.Core.SeleniumMethods
 
         public void CloseBrowser()
         {
+
             driver.Close();
-            driver = null;
+        }
+
+        public void ClearCookies()
+        {
+            driver.Manage().Cookies.DeleteAllCookies();
         }
     }
 }

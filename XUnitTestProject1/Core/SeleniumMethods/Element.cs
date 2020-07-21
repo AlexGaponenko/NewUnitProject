@@ -5,7 +5,7 @@ using System.Text;
 
 namespace XUnitTestProject1.Core.SeleniumMethods
 {
-    class GetText : Waiters
+    class Element : Waiters
     {
         public string getText(By locator)
         {

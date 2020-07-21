@@ -13,7 +13,7 @@ namespace NewUnitProject.PajeObject
 
         private Elements textField = new Elements();
         private Button button = new Button();
-        private GetText textName = new GetText();
+        private Element textName = new Element();
 
 
         public void TypeText(string _login, string _password)

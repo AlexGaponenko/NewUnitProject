@@ -7,7 +7,7 @@ namespace NewUnitProject.PajeObject
     {
         private readonly By _profileName = By.CssSelector("div.profile-header__name");
 
-        private GetText textName = new GetText();
+        private Element textName = new Element();
 
         public string userIdSherch()
         {
