@@ -5,7 +5,7 @@ using System.Text;
 
 namespace XUnitTestProject1.Core.SeleniumMethods
 {
-    internal class TextField : Waiters
+    internal class Elements : Waiters
     {
         public void type(By locator, string text)
         {

@@ -24,8 +24,11 @@ namespace NewUnitProject.PajeObject
 
         public void clicUserButton()
         {
+            button.WaitForAjax();
             button.click(_userButton);
         }
+
+
 
     }
 }

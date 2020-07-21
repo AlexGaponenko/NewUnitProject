@@ -11,7 +11,7 @@ namespace XUnitTestProject1.Core.SeleniumMethods
 {
     internal class Waiters : WebDriverSingleton
     {
-        protected IWebDriver driver = WebDriverSingleton.getWebDriver();
+        protected IWebDriver driver = WebDriverSingleton.GetIWebDriver();
         public IWebElement GetElement(By locator)
         {
             DefaultWait<IWebDriver> wait = new DefaultWait<IWebDriver>(driver)
@@ -42,6 +42,17 @@ namespace XUnitTestProject1.Core.SeleniumMethods
             };
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
             return wait.Until(ExpectedConditions.ElementToBeClickable(locator)).Displayed;
+        }
+
+        public void WaitForAjax()
+        {
+            var wait = new DefaultWait<IWebDriver>(driver)
+            {
+                Timeout = TimeSpan.FromSeconds(15),
+                PollingInterval = TimeSpan.FromMilliseconds(500)
+            };
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+            wait.Until(d => (bool)((IJavaScriptExecutor)d).ExecuteScript("return jQuery.active == 0"));
         }
     }
 

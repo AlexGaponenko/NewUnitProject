@@ -24,7 +24,6 @@ namespace XUnitTestProject1
         {   
            
             window.GoTo(url);
-            window.WindowMaximize();
             
         }
         public void Dispose()
@@ -55,9 +54,7 @@ namespace XUnitTestProject1
            MainMenu.openLoginMenu();
            AuthPage.TypeText(_loginRight,_passwordRight);
            MainMenu.clicProfileButton();
-           Thread.Sleep(300);
            MainMenu.clicUserButton();
-            UserAcc.userIdSherch();
            Assert.Equal(_userId, UserAcc.userIdSherch());
   
          }

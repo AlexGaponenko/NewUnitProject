@@ -11,7 +11,7 @@ namespace NewUnitProject.PajeObject
         private readonly By _continueButton = By.CssSelector("div[class^=auth-form] button[type^=submit]");
         private readonly By _notAuthMessage = By.CssSelector("div[class$=auth-form__line_condensed] div[class^=auth-form__description]");
 
-        private TextField textField = new TextField();
+        private Elements textField = new Elements();
         private Button button = new Button();
         private GetText textName = new GetText();
 

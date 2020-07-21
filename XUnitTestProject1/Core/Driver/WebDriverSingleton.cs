@@ -10,7 +10,7 @@ namespace XUnitTestProject1.Core.Driver
     {
             private static IWebDriver driver;
 
-        public IWebDriver GetIWebDriver()
+        public static IWebDriver GetIWebDriver()
         {
             if (driver == null)
             {
@@ -19,15 +19,6 @@ namespace XUnitTestProject1.Core.Driver
 
             return driver;
         }
-
-        public static IWebDriver getWebDriver()
-            {
-                if (driver == null)
-                {
-                    driver = new ChromeDriver();
-                }
-                return driver;
-            }
 
 
         internal object Navigate()
