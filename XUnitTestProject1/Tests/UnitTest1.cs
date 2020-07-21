@@ -54,6 +54,7 @@ namespace XUnitTestProject1
            MainMenu.openLoginMenu();
            AuthPage.TypeText(_loginRight,_passwordRight);
            MainMenu.clicProfileButton();
+           Assert.True(MainMenu.waitMenu());
            MainMenu.clicUserButton();
            Assert.Equal(_userId, UserAcc.userIdSherch());
   
