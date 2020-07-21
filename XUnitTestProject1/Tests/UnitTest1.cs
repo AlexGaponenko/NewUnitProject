@@ -57,7 +57,7 @@ namespace XUnitTestProject1
            MainMenu.clicProfileButton();
            Thread.Sleep(300);
            MainMenu.clicUserButton();
-           UserAcc.userIdSherch();
+            UserAcc.userIdSherch();
            Assert.Equal(_userId, UserAcc.userIdSherch());
   
          }
