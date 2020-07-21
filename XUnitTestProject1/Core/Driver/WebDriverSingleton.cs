@@ -8,7 +8,7 @@ namespace XUnitTestProject1.Core.Driver
 {
     internal class WebDriverSingleton
     {
-            private static IWebDriver driver;
+        private static IWebDriver driver;
 
         public static IWebDriver GetIWebDriver()
         {

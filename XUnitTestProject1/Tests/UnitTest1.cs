@@ -22,7 +22,7 @@ namespace XUnitTestProject1
 
         public UnitTest1()
         {   
-           
+            
             window.GoTo(url);
             
         }
