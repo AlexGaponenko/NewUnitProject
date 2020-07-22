@@ -5,24 +5,18 @@ using System.Text;
 namespace XUnitTestProject1.Core.SeleniumMethods
 {
     class Window : Waiters
+
     {
         public void GoTo(string url)
         {
 
             driver.Navigate().GoToUrl(url);
-            driver.Manage().Window.Maximize();
+ //           driver.Manage().Window.Maximize();
         }
 
         public void WindowMaximize()
         {
             driver.Manage().Window.Maximize();
-        }
-
-        public void CloseBrowser()
-        {
-
-            driver.Quit();
-            driver = null;
         }
 
         public void ClearCookies()
