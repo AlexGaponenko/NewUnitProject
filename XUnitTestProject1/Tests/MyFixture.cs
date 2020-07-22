@@ -1,3 +1,4 @@
+using AventStack.ExtentReports;
 using NewUnitProject.PajeObject;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -12,6 +13,8 @@ namespace XUnitTestProject1
 {
     public class MyFixture : IDisposable
     {
+        private ExtentReports extent;
+        ExtentTest test;
         private readonly string url = "https://www.onliner.by/";
 
 
