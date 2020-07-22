@@ -21,7 +21,8 @@ namespace XUnitTestProject1.Core.SeleniumMethods
         public void CloseBrowser()
         {
 
-            driver.Close();
+            driver.Quit();
+            driver = null;
         }
 
         public void ClearCookies()

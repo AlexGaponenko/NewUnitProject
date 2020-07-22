@@ -17,12 +17,12 @@ namespace XUnitTestProject1.Core.Driver
 
         public IWebDriver GetIWebDriver()
         {
-            if (driver == null) 
+            if (driver == null)
             {
-                driver = new FirefoxDriver(ChromeStart.OptionsChrome()); 
+                driver = new ChromeDriver(ChromeStart.OptionsChrome());
             }
-
-            return driver;
+                return driver;
+            
         }
 
     }
