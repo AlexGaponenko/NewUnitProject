@@ -54,6 +54,7 @@ namespace NUnitTestProject1.Test
                     var directory = TestContext.CurrentContext.TestDirectory;
                     var testname = TestContext.CurrentContext.Test.Name;
                     var path = directory + $"\\{testname}.png";
+
                     ((ITakesScreenshot)WebDriverSingleton.GetIWebDriver()).GetScreenshot().SaveAsFile(path);
 
                     test.Log(logstatus, "Snapshot below: " + test.AddScreenCaptureFromPath(path));
